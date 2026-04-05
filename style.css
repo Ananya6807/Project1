@@ -1,0 +1,255 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px 1fr 10px;
+    grid-template-columns: 260px 1fr 1fr 1fr ;
+    grid-template-areas:
+        "header header header header"
+        "sidebar main main main"
+        "sidebar main main main"
+        "footer footer footer footer" ;
+}
+/*header*/
+#header{
+    grid-area: header;
+    background-color: #81A6C6;
+    display: flex;
+    justify-content: space-between; /* logo left, clock right */
+    align-items: center;
+    padding: 0 20px;
+}
+#logo{
+    height: 65px;
+    width: 250px;
+}
+#clock , #date{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*sidebar*/
+#sidebar{
+    grid-area: sidebar;
+    background-color: #AACDDC;
+    padding-left: 20px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+
+}
+    
+.list {
+    list-style-type: none;
+    line-height: 40px;
+    font-size: 25px;  
+}
+.list a{text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: black;
+    border-radius: 8px;}
+.list a:hover {
+    background-color: #81A6C6;
+    color: white;
+}
+.list a.active {
+  background-color: #81A6C6;
+  color: white;
+}
+/*main*/
+#main{
+    grid-area: main;
+    background-color: #F3E3D0;
+    padding: 15px;
+   
+}
+/*Sections - HOME*/
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;   /* keeps your home grid working */
+}
+#home.active{
+    display:grid !important;
+    grid-template-columns:  repeat(4, 1fr) ;
+    grid-template-rows: repeat(4, 1fr) ;
+    grid-template-areas: 
+   
+    "cpi cpi quote quote "
+    "lectures lectures quote quote "
+    "lectures lectures Due_Today Due_Today "
+    "lectures lectures Due_Today Due_Today ";
+    
+    grid-gap: 20px;
+    height: 100%;
+    
+
+}
+#home div{background-color:#D2C4B4;
+    border-radius:20px ;
+    display: flex;
+    justify-content: center;
+}
+#cpi{
+    grid-area: cpi;
+}
+#Due_Today{
+    grid-area:Due_Today;   
+}
+#lectures{
+    grid-area:lectures;
+    display: block;
+    
+   margin-top: 20px;
+}
+.quote-box{
+    grid-area:quote;
+}
+
+    
+
+
+/*Sections - Courses*/
+#courses.active div {
+    display:flex;
+    background-color:#D2C4B4;
+    border-radius:20px ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+/*section- assignments*/
+.assignment-input {
+  margin-top: 15px;
+}
+
+.assignment-input input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.assignment-input button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#assignmentList {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#assignmentList li {
+  background: #D2C4B4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/*sections-notes*/
+#noteInput {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#savedNotes {
+  margin-top: 20px;
+}
+
+.note {
+  background: #D2C4B4;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+/*sections- timetable*/
+
+#timeTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#timeTable th, #timeTable td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+#timeTable th {
+  background-color: #81A6C6;
+  color: white;
+}
+
+/*theme*/
+#themeBtn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #81A6C6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#themeBtn:hover {
+  background-color: #5f8aa8;
+}
+.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+.dark #header{
+    background-color: #1e1e1e;
+}
+.dark #sidebar{
+    background-color: #285A48;
+    color: #D2C4B4;
+}
+.dark #footer{
+    background-color: #285A48;
+}
+.dark #main{
+    background-color: #242222;
+    
+}
+
+.dark #courses.active div,
+.dark #themeBtn,
+.dark #assignmentList li,
+.dark #timeTable th,
+.dark #themeBtn:hover,
+.dark .list a:hover,
+.dark .list a.active,
+.dark .note,
+.dark #home div{
+    background-color: #408A71;
+}
+
+
+
+/*footer*/
+#footer{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    grid-area: footer;
+    background-color:#81A6C6 ;
+
+
+}
+#copr{
+    height:15px;
+
+}
+

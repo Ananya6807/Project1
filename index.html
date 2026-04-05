@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project1</title>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <img id="logo" src="images/logo.png" alt="Studydash">
+            <div><div id="date"></div>
+                <div id="clock"></div>
+            </div>
+            
+            
+
+        </header>
+        <aside id="sidebar">
+            <h2>Dashboard</h2>
+            <ul class="list">
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('courses')">Courses</a></li>
+                <li><a onclick="showSection('assignments')">Assignments</a></li>
+                <li><a onclick="showSection('notes')">Notes</a></li>
+                <li><a onclick="showSection('timetable')">TimeTable</a></li>
+                <li><button onclick="toggleTheme()" id="themeBtn"> Dark Mode</button></li>
+            </ul>
+
+        </aside>
+        
+        <main id="main">
+            <section id="home" class="section">
+            
+                <div id="cpi">
+                    <h2>Hey! Your CPI is:  <br> 9.00 </h2>
+
+                    
+                </div>
+                <div id="lectures">
+                    <h2>Today's Lectures <br>
+                    <p id="todayLectures" style="font-size: 20px; "></p></h2>
+                    
+                </div>
+                <div class="quote-box">
+                    <h2>Motivational Quote <br>
+                    <p id="quoteText"  style="font-family:Comic Sans MS, cursive; font-size: 20px;">Loading quote...</p>
+                    <button onclick="getQuote()">New Quote</button></h2>
+                    
+                    </div>
+
+                <div id="Due_Today">
+                    <h2>Due_Today <br>
+                    <ul id="dueTodayList"></ul></h2>
+                    
+                </div>
+                
+            
+            </section>
+
+            <section id="courses" class="section">
+                <h2>Courses</h2>
+                <div id="active">
+                    <h3>Active courses</h3>
+                    <br>
+                    <p>Introduction to electrical engineering</p>
+                    
+                </div>
+                <br>
+                <div id="completed">
+                    <h3>Completed Courses</h3>
+                    
+                </div>
+            </section>
+
+
+            <section id="assignments" class="section">
+                 <h2>Assignments</h2>
+
+            <div class="assignment-input">
+                <input type="text" id="title" placeholder="Assignment Title">
+                <input type="date" id="deadline">
+                <button onclick="addAssignment()">Add</button>
+            </div>
+
+            <ul id="assignmentList"></ul>
+            </section>
+
+
+            <section id="notes" class="section">
+            <h2>Notes</h2>
+
+            <textarea id="noteInput" placeholder="Write your notes here..."></textarea>
+            <br>
+            <button onclick="saveNote()">Save Note</button>
+
+            <div id="savedNotes"></div>
+            </section>
+
+
+            <section id="timetable" class="section">
+            <h2>Timetable</h2>
+
+            <table id="timeTable">
+                <tr>
+                <th>Day</th>
+                <th>9:00-10:00am</th>
+                <th>10:00am–1:00pm</th>
+                <th>2:00-3:00pm</th>
+                <th>3:00-4:00pm</th>
+                <th>4:00-5:00pm</th>
+                <th>5:00-6:00pm</th>
+
+
+                </tr>
+
+                <tr>
+                <td>Monday</td>
+                <td id="mon1">-</td>
+                <td id="mon2">-</td>
+                <td id="mon3">MA103</td>
+                <td id="mon4">PH102</td>
+                <td id="mon5">EE101</td>
+                <td id="mon6">NO102</td>
+                </tr>
+
+                <tr>
+                <td>Tuesday</td>
+                <td id="tue1">EE101</td>
+                <td id="tue2">CC Lab</td>
+                <td id="tue3">PH102</td>
+                <td id="tue4">ME102</td>
+                <td id="tue5">-</td>
+                <td id="tue6">-</td>
+                </tr>
+
+                <tr>
+                <td>Wednesday</td>
+                <td id="wed1">-</td>
+                <td id="wed2">ME102 Lab</td>
+                <td id="wed3">BIO101</td>
+                <td id="wed4">MA103</td>
+                <td id="wed5">EE101</td>
+                <td id="wed6">NO102</td>
+                
+                </tr>
+
+                <tr>
+                <td>Thursday</td>
+                <td id="thu1">-</td>
+                <td id="thu2">-</td>
+                <td id="thu3">CS103</td>
+                <td id="thu4">BIO101</td>
+                <td id="thu5">MA103</td>
+                <td id="thu6">NO102</td>
+                </tr>
+
+                <tr>
+                <td>Friday</td>
+                <td id="fri1">MA103</td>
+                <td id="fri2">PHY Lab</td>
+                <td id="fri3">EE101</td>
+                <td id="fri4">BIO101</td>
+                <td id="fri5">PH102</td>
+                <td id="fri6">-</td>
+                </tr>
+            </table>
+            </section>
+
+
+        </main>
+        
+        <footer id="footer">
+            <img id="copr" src="images/copyright.png" alt="copyright">
+            <a>2026  |   SMART CAMPUS DASHBOARD</a>
+            
+        </footer>
+    </div>
+    <script src="script.js"></script>    
+</body>
+</html>
