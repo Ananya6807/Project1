@@ -162,5 +162,5 @@ Used a website to choose a suitable color palette for light and dark modes.
 
 # Team Members
 
-* Ananya
 * Pranay
+* Ananya
